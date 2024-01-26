@@ -1,0 +1,11 @@
+----------------8<-------------[ START TEST 
+        💻 TEST
+./a.out "1024"         🔎 YOUR OUTPUT:
+../../rendu/is_power_of_2/is_power_of_2.c:21:15: error: expected ';' after return statement
+    return (0)
+              ^
+              ;
+1 error generated.
+
+        ❌ COMPILATION ERROR
+----------------8<------------- END TEST ]

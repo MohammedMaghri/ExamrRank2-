@@ -1,0 +1,25 @@
+----------------8<-------------[ START TEST 
+        💻 TEST
+./a.out "16"         🔎 YOUR OUTPUT:
+../../rendu/ft_itoa/ft_itoa.c:33:35: error: use of undeclared identifier 'number'
+    int res_number = count_number(number);
+                                  ^
+../../rendu/ft_itoa/ft_itoa.c:35:9: error: use of undeclared identifier 'number'
+    if (number < 0)
+        ^
+../../rendu/ft_itoa/ft_itoa.c:37:9: error: use of undeclared identifier 'number'
+        number *= -1;
+        ^
+../../rendu/ft_itoa/ft_itoa.c:42:12: error: use of undeclared identifier 'number'
+    while (number != 0 && res_number >= 0)
+           ^
+../../rendu/ft_itoa/ft_itoa.c:44:35: error: use of undeclared identifier 'number'
+        allocation[res_number] = (number % 10) + '0';
+                                  ^
+../../rendu/ft_itoa/ft_itoa.c:45:9: error: use of undeclared identifier 'number'
+        number /= 10 ;
+        ^
+6 errors generated.
+
+        ❌ COMPILATION ERROR
+----------------8<------------- END TEST ]

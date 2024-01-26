@@ -1,0 +1,11 @@
+----------------8<-------------[ START TEST 
+        💻 TEST
+./a.out "16"         🔎 YOUR OUTPUT:
+Undefined symbols for architecture x86_64:
+  "_ft_itoa", referenced from:
+      _main in main-58a3bd.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+        ❌ COMPILATION ERROR
+----------------8<------------- END TEST ]
