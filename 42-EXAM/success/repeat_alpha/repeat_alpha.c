@@ -5,74 +5,58 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaghri <mmaghri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/26 11:26:48 by mmaghri           #+#    #+#             */
-/*   Updated: 2024/01/26 11:44:55 by mmaghri          ###   ########.fr       */
+/*   Created: 2024/01/27 15:01:11 by mmaghri           #+#    #+#             */
+/*   Updated: 2024/01/27 15:12:09 by mmaghri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdio.h>
+#include <unistd.h>
 
+int count_alphabet(char string)
+{
+    char allphabet;
+    int index = 0;
+
+    if (string >= 'a' && string <= 'z')
+        allphabet = 'a';
+    else if (string >= 'A' && string <= 'Z')
+        allphabet = 'A';
+    else 
+        return (0);
+    while (allphabet != string)
+    {
+        index++ ;
+        allphabet = allphabet + 1;
+    }
+    return  index ;
+}
 void paste(char string)
 {
-    write(1, &string, 1);
+    write(1,&string,1);
 }
-int count_alphabet(int alphabet)
+void repeat_it(char *string)
 {
-    int index ;
-    int flag ;
-
-    if (alphabet >= 'a' && alphabet <= 'z')
-        flag = 'a';
-    else if (alphabet >= 'A' && alphabet <= 'Z')
-        flag = 'A';
-    else 
-        return 0;
-    index = 1;
-    while (flag != alphabet)
-    {
-        flag = flag + 1;
-        index++ ;
-    }
-    return index;
-}
-int check_if(char string)
-{
-    if (string >= 'a' && string <= 'z' || string >= 'A' && string <= 'Z')
-        return (0);
-    return (1);
-}
-void print_number_of_time(char *string)
-{
-    int index;
-    int flag;
-
-    flag = 0;
-    index = 0;
-
+    int index = 0;
+    int total ;
     while (string[index])
     {
-        flag = count_alphabet(string[index]);
-        if ((check_if(string[index]) == 0))
+        total = count_alphabet(string[index]);
+        while (total >= 0)
         {
-            while (flag != 0)
-            {
-                paste(string[index]);
-                flag-- ;
-            }
-        }
-        else
             paste(string[index]);
+            total-- ;
+        }
         index++ ;
     }
 }
 int main(int argc, char **argv)
 {
     if (argc != 2)
-        {
-            paste('\n');
-            return (0);
-        }
-    print_number_of_time(argv[1]);
+    {
+        paste('\n');
+        return (0);
+    }
+    repeat_it(argv[1]);
     paste('\n');
 }

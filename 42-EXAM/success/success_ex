@@ -8,3 +8,14 @@ ft_swap
 is_power_of_2
 ft_range
 ft_itoa
+first_word
+ft_strcmp
+print_hex
+sort_list
+repeat_alpha
+union
+tab_mult
+ft_itoa
+rot_13
+ft_strcspn
+lcm
