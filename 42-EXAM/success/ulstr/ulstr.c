@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lcm.c                                              :+:      :+:    :+:   */
+/*   ulstr.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaghri <mmaghri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/27 22:28:50 by mmaghri           #+#    #+#             */
-/*   Updated: 2024/01/27 22:34:38 by mmaghri          ###   ########.fr       */
+/*   Created: 2024/01/27 22:01:32 by mmaghri           #+#    #+#             */
+/*   Updated: 2024/01/27 22:05:51 by mmaghri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
+#include <stdio.h>
 
-
-unsigned int    lcm(unsigned int a, unsigned int b)
+void paste(char string)
 {
-    unsigned int n ; 
-    if (a == 0 || b == 0)
-        return (0);
-    if (a > b)
-        n = a;
-    else 
-        n = b;
-    while (1)
+    write(1,&string,1);
+}
+int main(int argc, char **argv)
+{
+    int index = 0;
+    if (argc != 2)
     {
-        if (n % a == 0 && n % b == 0)
-            return (n);
-        n++ ;
+        paste('\n');
+        return (0);
     }
+    while (argv[1][index])
+    {
+        if (argv[1][index] >= 'a' && argv[1][index] <= 'z')
+            argv[1][index] -= 32;
+        else if (argv[1][index] >= 'A' && argv[1][index] <= 'Z')
+            argv[1][index] += 32;
+        paste(argv[1][index]);
+        index++ ;
+    }
+    paste('\n');
 }

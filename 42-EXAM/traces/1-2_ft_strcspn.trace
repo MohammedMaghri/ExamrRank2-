@@ -1,0 +1,7 @@
+----------------8<-------------[ START TEST 
+        💻 TEST
+./a.out "hello World" "hello world"         🔎 YOUR OUTPUT:
+clang: error: no such file or directory: '../../rendu/ft_strcspn/ft_strcspn.c'
+
+        ❌ COMPILATION ERROR
+----------------8<------------- END TEST ]

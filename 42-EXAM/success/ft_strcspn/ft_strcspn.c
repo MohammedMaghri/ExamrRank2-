@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaghri <mmaghri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/27 18:05:49 by mmaghri           #+#    #+#             */
-/*   Updated: 2024/01/27 18:07:23 by mmaghri          ###   ########.fr       */
+/*   Created: 2024/01/28 16:31:26 by mmaghri           #+#    #+#             */
+/*   Updated: 2024/01/28 16:32:21 by mmaghri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 size_t	ft_strcspn(const char *s, const char *reject)
 {
-    size_t index  = 0;
-
+    size_t index = 0;
     while (s[index])
     {
         if (s[index] == *reject)
-            break;
+            return (index);
         index++ ;
     }
-    return  index ;
+    return index ;
 }
